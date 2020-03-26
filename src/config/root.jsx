@@ -12,7 +12,7 @@ import { BrowserRouter as Router } from 'react-router-dom';
 import App from 'containers/app/app.component';
 
 // Import - Styles
-import GlobalStyles from 'utils/global-styles';
+import GlobalStyles from 'utils/styles/global-styles';
 
 // ----------------------------------------------------------------------------------------- //
 
