@@ -5,6 +5,9 @@ import React from 'react';
 import { Provider } from 'react-redux';
 import store from 'redux/store';
 
+// Import - Theme
+import Theme from 'config/theme';
+
 // Import - Router
 import { BrowserRouter as Router } from 'react-router-dom';
 
@@ -18,11 +21,13 @@ import GlobalStyles from 'utils/styles/global-styles';
 
 const Root = () => (
   <Provider store={store}>
-    <GlobalStyles />
+    <Theme>
+      <GlobalStyles />
 
-    <Router>
-      <App />
-    </Router>
+      <Router>
+        <App />
+      </Router>
+    </Theme>
   </Provider>
 );
 

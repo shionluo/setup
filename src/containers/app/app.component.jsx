@@ -2,11 +2,15 @@
 import React from 'react';
 
 // Import - Styles
-import { Paragraph } from './app.styles';
+import { Wrapper } from './app.styles';
 
 // ----------------------------------------------------------------------------------------- //
 
-const App = () => <Paragraph>Gruuu</Paragraph>;
+const App = () => (
+  <Wrapper>
+    <h1>Gruu !</h1>
+  </Wrapper>
+);
 
 // Export
 export default App;

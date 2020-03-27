@@ -1,21 +1,38 @@
 // Import - Styled Components
 import { createGlobalStyle } from 'styled-components';
 
+// Import - Normalize CSS
+import { normalize } from 'styled-normalize';
+
 // ----------------------------------------------------------------------------------------- //
 
 const GlobalStyle = createGlobalStyle`
-  body {
+  ${normalize}
+
+  *,
+  *::before,
+  *::after {
+    box-sizing: inherit;
+  }
+
+  html {
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    background: transparent;
     margin: 0;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-      'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-      sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+    padding: 0;
+  }
+
+  body {
+    font-family: sans-serif;
   }
 
   a {
     text-decoration: none;
-    color: black;
+  
+    &:hover {
+      text-decoration: none;
+    }
   }
 `;
 
