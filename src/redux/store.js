@@ -1,11 +1,12 @@
-// Import - Redux
+// Redux
 import { createStore, applyMiddleware, compose } from 'redux';
 import { composeWithDevTools } from 'redux-devtools-extension';
+import { persistStore } from 'redux-persist';
 
-// Import - Root Reducer
+// Reducer
 import rootReducer from 'redux/root-reducer';
 
-// ----------------------------------------------------------------------------------------- //
+/* -------------------------------------------------------------------------- */
 
 // List of middlewares
 const middlewares = [];
@@ -16,8 +17,6 @@ const enhancer =
     ? composeWithDevTools(applyMiddleware(...middlewares))
     : compose(applyMiddleware(...middlewares));
 
-// Create Redux Store
-const store = createStore(rootReducer, enhancer);
+export const store = createStore(rootReducer, enhancer);
 
-// Export
-export default store;
+export const persistor = persistStore(store);

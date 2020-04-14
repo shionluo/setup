@@ -1,20 +1,19 @@
-// Import - Styled Components
-import { createGlobalStyle } from 'styled-components';
+// Packages
+import { createGlobalStyle, keyframes } from 'styled-components';
 
-// Import - Normalize CSS
-import { normalize } from 'styled-normalize';
+/* -------------------------------------------------------------------------- */
 
-// ----------------------------------------------------------------------------------------- //
-
-const GlobalStyle = createGlobalStyle`
-  ${normalize}
-
-  *,
-  *::before,
-  *::after {
-    box-sizing: inherit;
+const fadeIn = keyframes`
+  from {
+      opacity: 0;
   }
 
+  to {
+      opacity: 1;
+  }
+`;
+
+export const GlobalStyles = createGlobalStyle`
   html {
     box-sizing: border-box;
     scroll-behavior: smooth;
@@ -25,16 +24,10 @@ const GlobalStyle = createGlobalStyle`
 
   body {
     font-family: sans-serif;
+    animation: ${fadeIn} 1s ease;
   }
 
   a {
     text-decoration: none;
-  
-    &:hover {
-      text-decoration: none;
-    }
   }
 `;
-
-// Export
-export default GlobalStyle;

@@ -1,14 +1,25 @@
-// Import - Redux
+// Redux
 import { combineReducers } from 'redux';
+import { persistReducer } from 'redux-persist';
+import storage from 'redux-persist/lib/storage';
 
-// Import - Reducers
+// Reducers
+import themeReducer from 'redux/theme/theme.reducer';
+import dimensionsReducer from 'redux/dimensions/dimensions.reducer';
 
-// ----------------------------------------------------------------------------------------- //
+/* -------------------------------------------------------------------------- */
+
+const persistConfig = {
+  storage,
+  key: 'root',
+  whitelist: ['theme'],
+};
 
 const rootReducer = combineReducers({
-  // Temporary Reducer
-  default: () => 'Default Reducer',
+  theme: themeReducer,
+  dimensions: dimensionsReducer,
 });
 
-// Export
-export default rootReducer;
+/* -------------------------------------------------------------------------- */
+
+export default persistReducer(persistConfig, rootReducer);

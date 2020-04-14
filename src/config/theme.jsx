@@ -1,16 +1,15 @@
-// Import - Core
+// Core
 import React from 'react';
 
-// Import - Theme Provider
+// Packages
 import { ThemeProvider } from 'styled-components';
 
-// ----------------------------------------------------------------------------------------- //
+/* -------------------------------------------------------------------------- */
 
-const theme = {
-  colors: {},
-};
+const theme = {};
 
 const Theme = ({ children }) => <ThemeProvider theme={theme}>{children}</ThemeProvider>;
 
-// Export
+/* -------------------------------------------------------------------------- */
+
 export default Theme;
