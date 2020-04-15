@@ -1,7 +1,5 @@
-// Types
 import { TOGGLE_THEME } from './theme.types';
 
-// Utils
 import { toggleColor } from './theme.utils';
 
 /* -------------------------------------------------------------------------- */

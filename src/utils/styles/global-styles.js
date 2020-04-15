@@ -1,4 +1,3 @@
-// Packages
 import { createGlobalStyle, keyframes } from 'styled-components';
 
 /* -------------------------------------------------------------------------- */

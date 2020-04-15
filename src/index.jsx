@@ -1,8 +1,6 @@
-// Core
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-// Config
 import Root from 'config/root';
 
 /* -------------------------------------------------------------------------- */

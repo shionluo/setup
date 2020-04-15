@@ -1,12 +1,9 @@
-// Core
 import React, { useEffect } from 'react';
 import { PropTypes } from 'prop-types';
 
-// Redux
 import { connect } from 'react-redux';
 import { setDimensions } from 'redux/dimensions/dimensions.actions';
 
-// Packages
 import { debounce } from 'lodash-es';
 
 /* -------------------------------------------------------------------------- */

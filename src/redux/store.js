@@ -1,9 +1,7 @@
-// Redux
 import { createStore, applyMiddleware, compose } from 'redux';
 import { composeWithDevTools } from 'redux-devtools-extension';
 import { persistStore } from 'redux-persist';
 
-// Reducer
 import rootReducer from 'redux/root-reducer';
 
 /* -------------------------------------------------------------------------- */
@@ -11,7 +9,7 @@ import rootReducer from 'redux/root-reducer';
 // List of middlewares
 const middlewares = [];
 
-// Add Redux DevTools Extension
+// Setup Redux DevTools only in development mode
 const enhancer =
   process.env.NODE_ENV === 'development'
     ? composeWithDevTools(applyMiddleware(...middlewares))

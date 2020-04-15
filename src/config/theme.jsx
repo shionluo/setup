@@ -1,7 +1,5 @@
-// Core
 import React from 'react';
 
-// Packages
 import { ThemeProvider } from 'styled-components';
 
 /* -------------------------------------------------------------------------- */
