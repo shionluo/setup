@@ -46,20 +46,21 @@ export const Spinner = styled.div`
 
 export const Bounce = styled.div`
   position: absolute;
-  width: 100%;
-  height: 100%;
-  border-radius: 50%;
-  background-color: #00c3b3;
-  opacity: 0.6;
   top: 0;
   left: 0;
-  animation: ${bounce} 2s ${props => (props.delay ? '-1s' : null)} infinite ease-in-out;
+  width: 100%;
+  height: 100%;
+  background-color: #00c3b3;
+  border-radius: 50%;
+  opacity: 0.6;
+  animation: ${bounce} 2s ${({ delay }) => delay || null} infinite ease-in-out;
 `;
 
 export const Text = styled.div`
-  ${tw`mx-auto mt-4 text-center text-sm font-light`}
+  ${tw`mx-auto mt-4 text-sm font-light`}
+
   ${color}
 
-  letter-spacing: 0.15rem;
-  animation: ${fade} 1.2s ease-in-out 0.2s infinite;
+  letter-spacing: 0.2rem;
+  animation: ${fade} 1.25s ease-in-out 0.25s infinite;
 `;

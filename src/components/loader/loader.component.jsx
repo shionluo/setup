@@ -26,7 +26,7 @@ const Loader = ({ theme, text }) => {
     <Container>
       <Spinner>
         <Bounce />
-        <Bounce delay />
+        <Bounce delay="-1s" />
       </Spinner>
 
       {text && <Text theme={theme}>{text}</Text>}
