@@ -3,7 +3,7 @@ import { PropTypes } from 'prop-types';
 
 import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
-import { selectTheme } from 'redux/theme/theme.selectors';
+import { selectThemeColor } from 'redux/theme/theme.selectors';
 
 import { LOADER_DELAY } from 'config/consts';
 
@@ -12,17 +12,17 @@ import { Container, Spinner, Bounce, Text } from './loader.styles';
 /* -------------------------------------------------------------------------- */
 
 const Loader = ({ theme, text }) => {
-  const [showLoader, setShowLoader] = useState(false);
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
-    const timer = setTimeout(() => setShowLoader(true), LOADER_DELAY);
+    const timer = setTimeout(() => setLoading(true), LOADER_DELAY);
 
     return () => {
       clearTimeout(timer);
     };
   }, []);
 
-  return showLoader ? (
+  return loading ? (
     <Container>
       <Spinner>
         <Bounce />
@@ -37,7 +37,7 @@ const Loader = ({ theme, text }) => {
 /* -------------------------------------------------------------------------- */
 
 const mapStateToProps = createStructuredSelector({
-  theme: selectTheme,
+  theme: selectThemeColor,
 });
 
 Loader.propTypes = {

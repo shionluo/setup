@@ -14,7 +14,6 @@ module.exports = {
 
       light: '#f7f8f9',
       dark: '#181818',
-      toggle: '#ffa500',
 
       black: '#000',
       white: '#fff',
