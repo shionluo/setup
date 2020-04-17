@@ -29,8 +29,8 @@ const fade = keyframes`
   }
 `;
 
-const color = ({ color }) => {
-  return color === 'dark' ? tw`text-light` : tw`text-dark`;
+const color = ({ theme }) => {
+  return theme === 'dark' ? tw`text-light` : tw`text-dark`;
 };
 
 export const Container = styled.div`
@@ -38,19 +38,19 @@ export const Container = styled.div`
 `;
 
 export const Spinner = styled.div`
+  position: relative;
   width: 40px;
   height: 40px;
-  position: relative;
   margin: 20px auto 10px auto;
 `;
 
 export const Bounce = styled.div`
+  position: absolute;
   width: 100%;
   height: 100%;
   border-radius: 50%;
   background-color: #00c3b3;
   opacity: 0.6;
-  position: absolute;
   top: 0;
   left: 0;
   animation: ${bounce} 2s ${props => (props.delay ? '-1s' : null)} infinite ease-in-out;

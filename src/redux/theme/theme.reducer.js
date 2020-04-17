@@ -5,7 +5,7 @@ import { toggleColor } from './theme.utils';
 /* -------------------------------------------------------------------------- */
 
 const INITIAL_STATE = {
-  color: 'dark',
+  color: 'light',
 };
 
 const themeReducer = (state = INITIAL_STATE, { type }) => {

@@ -29,7 +29,7 @@ const Loader = ({ theme, text }) => {
         <Bounce delay />
       </Spinner>
 
-      {text && <Text color={theme}>{text}</Text>}
+      {text && <Text theme={theme}>{text}</Text>}
     </Container>
   ) : null;
 };
