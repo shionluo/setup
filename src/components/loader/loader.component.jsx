@@ -11,6 +11,10 @@ import { Container, Spinner, Bounce, Text } from './loader.styles';
 
 /* -------------------------------------------------------------------------- */
 
+const mapStateToProps = createStructuredSelector({
+  theme: selectThemeColor,
+});
+
 const Loader = ({ theme, text }) => {
   const [loading, setLoading] = useState(false);
 
@@ -35,10 +39,6 @@ const Loader = ({ theme, text }) => {
 };
 
 /* -------------------------------------------------------------------------- */
-
-const mapStateToProps = createStructuredSelector({
-  theme: selectThemeColor,
-});
 
 Loader.propTypes = {
   theme: PropTypes.string,
