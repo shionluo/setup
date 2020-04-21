@@ -10,7 +10,7 @@ const initialState = {
 };
 
 const reducer = {
-  [SET_DIMENSIONS]: (state, { width, height }) => ({ width, height }),
+  [SET_DIMENSIONS]: (state, { width, height }) => ({ ...state, width, height }),
 };
 
 export const dimensionsReducer = createReducer(initialState, reducer);

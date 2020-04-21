@@ -9,7 +9,7 @@ const initialState = {
 };
 
 const reducer = {
-  [TOGGLE_THEME]: ({ color }) => ({ color: color === 'light' ? 'dark' : 'light' }),
+  [TOGGLE_THEME]: state => ({ ...state, color: state.color === 'light' ? 'dark' : 'light' }),
 };
 
 export const themeReducer = createReducer(initialState, reducer);
