@@ -2,8 +2,8 @@ import { combineReducers } from 'redux';
 import { persistReducer } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
 
-import themeReducer from 'redux/theme/theme.reducer';
-import dimensionsReducer from 'redux/dimensions/dimensions.reducer';
+import { dimensionsReducer } from 'redux/dimensions/dimensions.reducer';
+import { themeReducer } from 'redux/theme/theme.reducer';
 
 /* -------------------------------------------------------------------------- */
 
@@ -13,11 +13,9 @@ const persistConfig = {
   whitelist: ['theme'],
 };
 
-const rootReducer = combineReducers({
-  theme: themeReducer,
+const reducer = combineReducers({
   dimensions: dimensionsReducer,
+  theme: themeReducer,
 });
 
-/* -------------------------------------------------------------------------- */
-
-export default persistReducer(persistConfig, rootReducer);
+export const rootReducer = persistReducer(persistConfig, reducer);

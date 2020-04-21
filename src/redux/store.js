@@ -2,7 +2,7 @@ import { createStore, applyMiddleware, compose } from 'redux';
 import { composeWithDevTools } from 'redux-devtools-extension';
 import { persistStore } from 'redux-persist';
 
-import rootReducer from 'redux/root-reducer';
+import { rootReducer } from 'redux/root-reducer';
 
 /* -------------------------------------------------------------------------- */
 

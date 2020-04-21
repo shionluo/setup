@@ -1,24 +1,15 @@
-import { TOGGLE_THEME } from './theme.types';
+import { createReducer } from 'redux/create-reducer';
 
-import { toggleColor } from './theme.utils';
+import { TOGGLE_THEME } from './theme.types';
 
 /* -------------------------------------------------------------------------- */
 
-const INITIAL_STATE = {
+const initialState = {
   color: 'light',
 };
 
-const themeReducer = (state = INITIAL_STATE, { type }) => {
-  const reducer = {
-    [TOGGLE_THEME]: {
-      ...state,
-      color: toggleColor(state),
-    },
-  };
-
-  return reducer[type] || state;
+const reducer = {
+  [TOGGLE_THEME]: ({ color }) => ({ color: color === 'light' ? 'dark' : 'light' }),
 };
 
-/* -------------------------------------------------------------------------- */
-
-export default themeReducer;
+export const themeReducer = createReducer(initialState, reducer);

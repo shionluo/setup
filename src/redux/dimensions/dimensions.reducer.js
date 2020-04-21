@@ -1,26 +1,16 @@
+import { createReducer } from 'redux/create-reducer';
+
 import { SET_DIMENSIONS } from './dimensions.types';
 
 /* -------------------------------------------------------------------------- */
 
-const INITIAL_STATE = {
+const initialState = {
   width: window.innerWidth,
   height: window.innerHeight,
 };
 
-const dimensionsReducer = (state = INITIAL_STATE, { type, dimensions = {} }) => {
-  const { width, height } = dimensions;
-
-  const reducer = {
-    [SET_DIMENSIONS]: {
-      ...state,
-      width,
-      height,
-    },
-  };
-
-  return reducer[type] || state;
+const reducer = {
+  [SET_DIMENSIONS]: (state, { width, height }) => ({ width, height }),
 };
 
-/* -------------------------------------------------------------------------- */
-
-export default dimensionsReducer;
+export const dimensionsReducer = createReducer(initialState, reducer);
